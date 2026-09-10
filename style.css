@@ -1,0 +1,500 @@
+/* ==========================================
+   RESET & GLOBAL STYLES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-dark: #0d0b0a;
+    --card-bg: rgba(28, 22, 18, 0.85);
+    --card-border: rgba(212, 163, 115, 0.2);
+    --primary-accent: #d4a373;
+    --primary-hover: #faedcd;
+    --text-light: #fefae0;
+    --text-muted: #a39281;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--bg-dark);
+    /* High-resolution coffee beans background with dark overlay */
+    background-image: 
+        linear-gradient(rgba(13, 11, 10, 0.88), rgba(13, 11, 10, 0.94)),
+        url('https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   NAVIGATION BAR
+   ========================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 8%;
+    background: rgba(13, 11, 10, 0.85);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 163, 115, 0.15);
+}
+
+.logopic {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--text-light);
+}
+
+.logopic span {
+    color: var(--primary-accent);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-accent);
+}
+
+.login-btn {
+    background-color: transparent;
+    border: 1.5px solid var(--primary-accent);
+    color: var(--primary-accent);
+    padding: 0.5rem 1.4rem;
+    border-radius: 25px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: var(--primary-accent);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px rgba(212, 163, 115, 0.4);
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+    text-align: center;
+    padding: 6rem 2rem 4rem;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.8rem;
+    letter-spacing: 2px;
+    color: var(--primary-accent);
+    margin-bottom: 0.5rem;
+}
+
+.hero h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: var(--text-light);
+    line-height: 1.3;
+}
+
+.hero h2 span {
+    font-style: italic;
+    color: var(--primary-accent);
+}
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 0.8rem 2rem;
+    background: var(--primary-accent);
+    color: var(--bg-dark);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    background: var(--primary-hover);
+}
+
+.section-divider {
+    width: 80px;
+    height: 3px;
+    background: var(--primary-accent);
+    margin: 2rem auto;
+    border-radius: 2px;
+}
+
+/* ==========================================
+   PRODUCTS SECTION
+   ========================================== */
+.P-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 2rem 6rem;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-accent);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0,0,0,0.4));
+}
+
+.product-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    margin-bottom: 0.3rem;
+}
+
+.product-info .price {
+    color: var(--primary-accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: transparent;
+    border: 1px solid var(--primary-accent);
+    color: var(--text-light);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background: var(--primary-accent);
+    color: var(--bg-dark);
+}
+
+/* ==========================================
+   FOOTER SECTION
+   ========================================== */
+.footer {
+    background: rgba(8, 6, 5, 0.95);
+    border-top: 1px solid rgba(212, 163, 115, 0.15);
+    padding: 4rem 8% 2rem;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+.coffee-logo {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand h3 {
+    font-family: var(--font-heading);
+    letter-spacing: 1.5px;
+    color: var(--primary-accent);
+    margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-column h4 {
+    font-family: var(--font-heading);
+    color: var(--text-light);
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.footer-column p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-column p span {
+    color: var(--text-light);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+/* ==========================================
+   AUTHENTICATION PAGES (LOGIN & REGISTER)
+   ========================================== */
+.auth-body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 440px;
+    background: rgba(20, 15, 12, 0.88);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-logo {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-light);
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 0.8rem;
+}
+
+.auth-logo span {
+    color: var(--primary-accent);
+}
+
+.auth-header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--text-light);
+    margin-bottom: 0.3rem;
+}
+
+.auth-header p {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+}
+
+/* Form Fields */
+.auth-form .form-group {
+    margin-bottom: 1.2rem;
+    text-align: left;
+}
+
+.auth-form label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: rgba(10, 8, 7, 0.7);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    color: var(--text-light);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form input:focus {
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 8px rgba(212, 163, 115, 0.3);
+}
+
+/* Form Extra Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.82rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+}
+
+.remember-me input[type="checkbox"] {
+    accent-color: var(--primary-accent);
+}
+
+.forgot-pass,
+.terms-link {
+    color: var(--primary-accent);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.forgot-pass:hover,
+.terms-link:hover {
+    color: var(--primary-hover);
+    text-decoration: underline;
+}
+
+/* Auth Submit Button */
+.auth-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: var(--primary-accent);
+    color: var(--bg-dark);
+    border: none;
+    border-radius: 10px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-btn:hover {
+    background: var(--primary-hover);
+    box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Footer & Back Link */
+.auth-footer {
+    text-align: center;
+    margin-top: 1.8rem;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+}
+
+.auth-footer a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-footer a:hover {
+    text-decoration: underline;
+}
+
+.back-home {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: var(--text-muted) !important;
+    transition: color 0.2s ease;
+}
+
+.back-home:hover {
+    color: var(--primary-accent) !important;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+}
